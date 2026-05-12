@@ -1,6 +1,6 @@
-# Detalhamento Técnico e Estudo de Caso (Para Entrevistas)
+# Detalhamento Técnico e Estudo de Caso 
 
-Este documento foi criado para detalhar as decisões técnicas, a lógica de negócio e o desenvolvimento do projeto **Churn de Investidores**. Ele serve como um guia profundo para estudos e para apresentação em entrevistas técnicas na área de Data Analytics, Data Science e Business Intelligence.
+Este documento foi criado para detalhar as decisões técnicas, a lógica de negócio e o desenvolvimento do projeto **Churn de Investidores**. Ele serve como um guia profundo para estudos e para apresentação do projeto e anáçise técnicas na área de Data Analytics, Data Science e Business Intelligence.
 
 ---
 
