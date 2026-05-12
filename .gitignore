@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+data_info.json
+inspect_data.py
+generate_notebooks.py
+train_initial_model.py
