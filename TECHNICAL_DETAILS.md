@@ -71,3 +71,49 @@ Ele possui:
 - **Engenharia de Software:** Pipelines automatizados e orientados a arquivos.
 - **Ciência de Dados Avançada:** XGBoost com feature engineering voltado à dor de negócio.
 - **Produto e UX:** Um painel focado no tomador de decisão, com design premium forçado via configs de alto nível, cartões envidraçados e legibilidade absoluta.
+
+---
+
+## 5. Como Executar o Projeto em uma Máquina Nova (Live Coding / Entrevista)
+
+Se o entrevistador pedir para você "clonar e rodar na máquina dele" ou se você for apresentar ao vivo em um computador virgem, siga este roteiro exato e nada dará errado:
+
+### Passo 1: Clonar o Repositório
+Abra o terminal (Git Bash, CMD ou PowerShell) na máquina e digite:
+```bash
+git clone https://github.com/eltonjuliano/churn_investidores.git
+cd churn_investidores
+```
+
+### Passo 2: Criar um Ambiente Virtual (Opcional, mas recomendado para entrevistas)
+Mostrar que você usa Ambientes Virtuais (`venv`) soma muitos pontos na entrevista, pois evita conflitos de bibliotecas.
+```bash
+# Criar o ambiente virtual (Windows)
+python -m venv venv
+
+# Ativar o ambiente (Windows)
+venv\Scripts\activate
+
+# Se for Linux/Mac: source venv/bin/activate
+```
+
+### Passo 3: Instalar as Dependências
+Com o ambiente ativado (ou diretamente no Python global), instale as bibliotecas necessárias que listamos no `requirements.txt`:
+```bash
+pip install -r requirements.txt
+```
+
+### Passo 4: Rodar o Pipeline de Ingestão (Simulando o Backend)
+Antes de abrir o dashboard, você precisa processar os dados brutos e rodar os modelos. Explique ao entrevistador: *"Vou rodar a pipeline de ingestão que pega os dados brutos, aplica feature engineering e passa pelo XGBoost"*.
+```bash
+python src/ingestion_pipeline.py
+```
+*O que acontece aqui?* O script pega o arquivo de `data/raw/`, faz as predições, joga para `data/archive/` e cria a nossa base final (`data/processed/dataset_master.csv`).
+
+### Passo 5: Inicializar o Dashboard (Front-End)
+Agora que a base de dados preditiva está pronta, levante a aplicação Streamlit:
+```bash
+streamlit run dashboard/app.py
+```
+O navegador vai abrir automaticamente em `http://localhost:8501`. 
+*Dica:* O arquivo `.streamlit/config.toml` já forçará a abertura no Dark Mode automaticamente, exibindo o CSS Premium de imediato.
